@@ -1,37 +1,43 @@
-# Ignore IntelliJ project files
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
 .idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# Ignore VSCode project files
-.vscode/
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
 
-# Ignore macOS system files
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+__screenshots__/
+
+# System files
 .DS_Store
-
-# Ignore target directory
-**/target/
-
-# Ignore node_modules
-**/node_modules/
-
-# Ignore logs
-*.log
-
-# Ignore temporary files
-*.tmp
-*.swp
-
-# Ignore build artifacts
-**/dist/
-**/build/
-
-# Ignore Maven wrapper files
-**/.mvn/
-**/mvnw
-**/mvnw.cmd
-
-# Ignore generated files
-**/generated-sources/
-**/generated-test-sources/
-
-# Ignore Surefire reports
-**/surefire-reports/
+Thumbs.db
