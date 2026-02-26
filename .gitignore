@@ -1,0 +1,37 @@
+# Ignore IntelliJ project files
+.idea/
+
+# Ignore VSCode project files
+.vscode/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore target directory
+**/target/
+
+# Ignore node_modules
+**/node_modules/
+
+# Ignore logs
+*.log
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore build artifacts
+**/dist/
+**/build/
+
+# Ignore Maven wrapper files
+**/.mvn/
+**/mvnw
+**/mvnw.cmd
+
+# Ignore generated files
+**/generated-sources/
+**/generated-test-sources/
+
+# Ignore Surefire reports
+**/surefire-reports/
