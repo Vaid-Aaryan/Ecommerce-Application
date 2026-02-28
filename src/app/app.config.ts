@@ -1,6 +1,6 @@
 import { ApplicationConfig, importProvidersFrom, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, Route } from '@angular/router';
-import { HTTP_INTERCEPTORS, provideHttpClient, withFetch } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withFetch, withInterceptors, withInterceptorsFromDi } from '@angular/common/http';
 import { ProductList } from './components/product-list/product-list';
 import { Routes} from '@angular/router';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
@@ -9,7 +9,7 @@ import { NgbModule  } from '@ng-bootstrap/ng-bootstrap';
 import { CartDetails } from './components/cart-details/cart-details';
 import { Checkout } from './components/checkout/checkout';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AuthModule } from '@auth0/auth0-angular';
+import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
 import myAppConfig from './config/my-app-config';
 import { AuthInterceptor } from './services/auth-interceptor';
 import { AuthGuard } from '@auth0/auth0-angular';
@@ -37,7 +37,8 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
-    provideHttpClient(withFetch()),
+    provideHttpClient(withFetch(),
+  withInterceptorsFromDi()),
     importProvidersFrom(ReactiveFormsModule,NgbModule,
       AuthModule.forRoot({
         ...myAppConfig.auth,
