@@ -8,6 +8,7 @@ import { OrderHistory } from '../../common/order-history';
   imports: [NgIf, NgFor, DatePipe],
   templateUrl: './order-history.html',
   styleUrl: './order-history.css',
+  providers: [OrderHistoryService],
 })
 export class OrderHistoryComponent {
   orderHistoryList : OrderHistory[] = [];
