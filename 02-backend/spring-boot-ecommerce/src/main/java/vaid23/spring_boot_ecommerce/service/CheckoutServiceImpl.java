@@ -78,7 +78,9 @@ public class CheckoutServiceImpl implements CheckoutService{
        Map<String,Object> params = new HashMap<>();
        params.put("amount", paymentInfo.getAmount());
        params.put("currency", paymentInfo.getCurrency());
+       params.put("receipt_email", paymentInfo.getReceiptEmail());
        params.put("payment_method_types", paymentMethodTypes);
+       params.put("description", "E-commerce Purchase");
 
        return PaymentIntent.create(params);
 
